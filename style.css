@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+} /*apply to the universal selector (* - everything) a box sizing property and set it border box, so if we add any padding or border to an element, it doesn't effect the width of it */
+
+body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158); /*this is mixing 2 colors togheter as background. 90deg is the direction the coloros are going on the screen*/
+    font-family: 'Roboto', sans-serif;
+    display: flex; /*elements displayed horizontally*/
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /*it takes all the display*/
+    overflow: hidden; /*prevent unwanted horizontal scrolling and extra whitespace in your project when elements exist outside the viewport*/
+    margin: 0;
+}
+
+.search {
+    position: relative;
+    height: 50px;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease; /*transition added to the width property*/
+}
+
+.btn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute; /*we position the button absolut within the search class*/
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none; /*remove the outline when you are over it with the mouse*/
+}
+
+.search.active .input {
+    width: 200px;
+}
+
+.search.active .btn {
+    transform: translateX(198px);/*to move it to the right*/
+}
